@@ -59,7 +59,8 @@ object GradientDescent {
 
     f.saveas("dataGraph.png")
 */
-    val data = for (i <- 1 to 5) yield (5,i)
+    val data = for (i <- 1 to 5) yield (5*i,i)
+    println(data)
     val chart = XYLineChart(data)
     chart.saveAsPNG("chart.png")
 
