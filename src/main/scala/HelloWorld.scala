@@ -47,7 +47,9 @@ object GradientDescent {
     println(s"This car worth ${res.toInt} euro")
 
     val estimate = mileage.map(x => (theta1 * (x * 1000)) + theta0)
+
     val f = Figure()
+    f.visible = false
     val p = f.subplot(0)
     p += plot(mileage.map(x => x * 1000), price.map(x => x * 1000), '.')
     p += plot(mileage.map(x => x * 1000), estimate)
