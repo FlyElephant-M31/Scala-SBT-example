@@ -5,6 +5,8 @@ import sys.process._
 
 import breeze.linalg._
 import breeze.plot._
+import scalax.chart.api._
+
 
 object GradientDescent {
 
@@ -48,9 +50,7 @@ object GradientDescent {
 
     val estimate = mileage.map(x => (theta1 * (x * 1000)) + theta0)
 
-    System.setProperty("java.awt.headless", "true");
-    val f = Figure()
-    f.visible = false
+   /* val f = Figure()
     val p = f.subplot(0)
     p += plot(mileage.map(x => x * 1000), price.map(x => x * 1000), '.')
     p += plot(mileage.map(x => x * 1000), estimate)
@@ -58,7 +58,12 @@ object GradientDescent {
     p.ylabel = "price (in euro)"
 
     f.saveas("dataGraph.png")
+*/
+    val data = for (i <- 1 to 5) yield (5,i)
+    val chart = XYLineChart(data)
+    chart.saveAsPNG("chart.png")
 
     }
+
 
 }
