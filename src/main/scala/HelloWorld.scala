@@ -48,6 +48,7 @@ object GradientDescent {
 
     val estimate = mileage.map(x => (theta1 * (x * 1000)) + theta0)
 
+    System.setProperty("java.awt.headless", "true");
     val f = Figure()
     f.visible = false
     val p = f.subplot(0)
